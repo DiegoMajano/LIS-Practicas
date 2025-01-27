@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prácticas LIS - Ciclo 01 2025</title>
     <link href="./css/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
     </head>
-<body class="bg-gray-100 flex flex-col min-h-screen">
-    <header class="bg-blue-600 text-white py-4 shadow-md">
-        <div class="container mx-auto text-center">
+<body class="bg-gray-200 flex flex-col min-h-screen">
+    <header class="bg-blue-950 text-white py-5 shadow-md">
+        <div class="container mx-auto text-center py-2">
             <h1 class="text-3xl font-bold">Prácticas PHP</h1>
-            <p class="text-sm mt-2">Accede a las prácticas desarrolladas durante el curso</p>
+            <p class="text-sm mt-2">Bienvenido, aquí encontrarás las prácticas desarrolladas en el ciclo</p>
         </div>
     </header>
 
@@ -19,7 +20,7 @@
             <h2 class="text-xl font-semibold text-gray-700 mb-4">Lista de Prácticas</h2>
             <ul class="space-y-4">
                 <li>
-                    <a href="practica1/" class="block bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg p-4 text-blue-600">
+                    <a href="Practica1/" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
                         Práctica 1: Fundamentos de Programación en PHP
                     </a>
                 </li>

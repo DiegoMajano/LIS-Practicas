@@ -3,14 +3,20 @@
   <materia>
     <codigo>LIS104</codigo>
     <nombre>Lenguajes interpretados en el servidor</nombre>
-    <uvs>4</uvs>
+    <uvs>3</uvs>
     <nota>8</nota>
   </materia>
   <materia>
     <codigo>LIC</codigo>
     <nombre>Lenguajes interpretados en el cliente</nombre>
-    <uvs>3</uvs>
-    <nota>10</nota>
+    <uvs>4</uvs>
+    <nota>7</nota>
   </materia>
-  
-<materia><codigo>PED</codigo><nombre>Programacion con estructuras de datos</nombre><uvs>4</uvs><nota>9</nota></materia></materias>
+
+  <materia>
+    <codigo>PED</codigo>
+    <nombre>Programacion con estructuras de datos</nombre>
+    <uvs>3</uvs>
+    <nota>9</nota>
+  </materia>
+</materias>

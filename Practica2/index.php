@@ -29,6 +29,31 @@
                         Ejercicio Clase
                     </a>
                 </li>
+                <li>
+                    <a href="Ejemplo1/bisiesto.php" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
+                        Ejemplo 1
+                    </a>
+                </li>
+                <li>
+                    <a href="Ejemplo2/salario.html" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
+                        Ejemplo 2
+                    </a>
+                </li>
+                <li>
+                    <a href="Ejemplo3/compararnumeros.html" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
+                        Ejemplo 3
+                    </a>
+                </li>
+                <li>
+                    <a href="Ejemplo4/convertir.php" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
+                        Ejemplo 4
+                    </a>
+                </li>
+                <li>
+                    <a href="Ejemplo5/convmonedas.php" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
+                        Ejemplo 5
+                    </a>
+                </li>
                                    
             </ul>
         </section>
@@ -36,7 +61,7 @@
 
     <footer class="bg-gray-800 text-white py-4 mt-auto w-full">
         <div class="container mx-auto text-center">
-            <p>&copy; <?php echo date("Y"); ?> Práctica 1 - Diego José Rodríguez Majano</p>
+        <p>&copy; <?php echo date("Y"); ?> Prácticas 2 - <a class="hover:underline" href="https://github.com/DiegoMajano/">Diego José Rodríguez Majano</a></p>
         </div>
     </footer>
 </body>

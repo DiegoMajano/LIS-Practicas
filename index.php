@@ -35,7 +35,7 @@
 
     <footer class="bg-gray-800 text-white py-4 mt-auto w-full">
         <div class="container mx-auto text-center">
-            <p>&copy; <?php echo date("Y"); ?> Prácticas LIS - Diego José Rodríguez Majano</p>
+            <p>&copy; <?php echo date("Y"); ?> Prácticas LIS - <a class="hover:underline" href="https://github.com/DiegoMajano/">Diego José Rodríguez Majano</a></p>
         </div>
     </footer>
 </body>

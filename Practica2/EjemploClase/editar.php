@@ -23,6 +23,7 @@ if(isset($_POST['codigo'])){
     }    	
 
 	$materias->asXML('materias.xml');
+    header('location:index.php?exito=2');
 	
 } else{
     header('location:index.php');

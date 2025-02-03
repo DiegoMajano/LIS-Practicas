@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/bootstrap.min.css" />
 </head>
 <!--  -->
+
 <body>
     <div class="container">
         <h1 class="page-header text-center">Calculadora de CUM</h1>
@@ -33,8 +34,6 @@
                         // para acceder al archivo, sin direccion porque esta en la misma carpeta
                         $materias = simplexml_load_file('materias.xml');
 
-                        // var_dump($materias);
-
                         $cum = 0;
                         $sumaUvs = 0;
                         $notasPorUvs = 0;
@@ -51,33 +50,36 @@
                                 <td><?= $materia->nota ?></td>
                                 <td>
                                     
-                                    <a class="btn btn-success" data-toggle="modal" data-target="#editModal<?= $codigo ?>">Editar</a>
+                                    
+                                    <a class="btn btn-success" data-toggle="modal" href="#editModal<?= $materia->codigo ?>">Editar</a>
                                     <a href="eliminar.php?codigo=<?= $materia->codigo ?>" class="btn btn-danger">Borrar</a>
                                 </td>
+                                
+                            </tr>
 
-                                <div class="modal fade" id="editModal<?= $codigo ?>" tabindex="-1" role="dialog">
+                                <div class="modal fade" id="editModal<?= $materia->codigo ?>" tabindex="-1" role="dialog">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <form method="POST" action="editar.php">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title">Editar Materia (Código: <?= $codigo ?>)</h5>
+                                                    <h5 class="modal-title">Editar Materia (Código: <?= $materia->codigo ?>)</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <input type="hidden" name="codigo" value="<?= $codigo ?>">
+                                                    <input type="hidden" name="codigo" value="<?= $materia->codigo ?>">
                                                     <div class="form-group">
                                                         <label for="nombre">Nombre</label>
-                                                        <input type="text" name="nombre" class="form-control" value="<?= $nombre ?>" required>
+                                                        <input type="text" name="nombre" class="form-control" value="<?= $materia->nombre ?>" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="uvs">UVs</label>
-                                                        <input type="number" name="uvs" class="form-control" value="<?= $uvs ?>" required>
+                                                        <input type="number" name="uvs" class="form-control" value="<?= $materia->uvs ?>" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="nota">Nota</label>
-                                                        <input type="number" step="0.01" name="nota" class="form-control" value="<?= $nota ?>" required>
+                                                        <input type="number" step="0.01" name="nota" class="form-control" value="<?= $materia->nota ?>" required>
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
@@ -89,9 +91,9 @@
                                     </div>
                                 </div>
 
-                            </tr>
-
+                            
                         <?php
+                        
                         }
 
                         ?>
@@ -116,18 +118,22 @@
     <?php
 
     include_once('nueva_modal.php');
-    if(isset($_GET['exito']) && $_GET['exito'] == 1){
-        
+    if (isset($_GET['exito']) && $_GET['exito'] == 1) {
+    ?>
+        <script>
+            alertify.success('Materia registrada exitosamente');
+        </script>
+
+    <?php
+    } else{
     ?>
 
-    <script>
-        alertify.success('Materia registrada exitosamente');
-    </script>
-
+        <script>
+            alertify.success('Materia editada exitosamente');
+        </script>
     <?php 
-    }
+    }    
     ?>
-
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

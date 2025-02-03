@@ -24,6 +24,11 @@
                         Práctica 1: Fundamentos de Programación en PHP
                     </a>
                 </li>
+                <li>
+                    <a href="Practica2/" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
+                        Práctica 2: Estructuras de control en PHP
+                    </a>
+                </li>
             </ul>
         </section>
     </main>

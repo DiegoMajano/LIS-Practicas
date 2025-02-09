@@ -10,12 +10,12 @@
 <body class="bg-gray-200 flex flex-col min-h-screen">
     <header class="bg-blue-950 text-white py-5 shadow-md static">
         <div class="container mx-auto text-center py-2">
-            <h1 class="text-3xl font-bold">Práctica 2</h1>
-            <p class="text-sm mt-2">Estructuras de control en PHP</p>
+            <h1 class="text-3xl font-bold">Práctica 3</h1>
+            <p class="text-sm mt-2">Arreglos y matrices en PHP</p>
         </div>
         <nav class="w-full text-center mt-3 ">
             <ul>
-                <li class="transition ease-in-out hover:scale-110 hover:underline"><a href="../" class=" ">Inicio</a></li>
+                <li class="transition ease-in-out hover:underline"><a href="../" class=" ">Inicio</a></li>
             </ul>
         </nav>
     </header>

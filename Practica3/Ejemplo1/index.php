@@ -107,9 +107,9 @@ foreach ($materias as $materia => $notas) {
     echo "</table>";
 }
 echo "</div>";
+
+include_once('../../includes/backButton.php');
+
 echo "</body>\n";
 echo "</html>\n";
-?>
-
-
 ?>

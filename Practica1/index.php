@@ -15,7 +15,7 @@
         </div>
         <nav class="w-full text-center mt-3 ">
             <ul>
-                <li class="transition ease-in-out hover:scale-110 hover:underline"><a href="../" class=" ">Inicio</a></li>
+                <li class="transition ease-in-out hover:underline"><a href="../" class=" ">Inicio</a></li>
             </ul>
         </nav>
     </header>

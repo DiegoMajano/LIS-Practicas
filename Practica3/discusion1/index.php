@@ -7,84 +7,67 @@
     <link rel="stylesheet" href="../../css/output.css">
     <link rel="stylesheet" href="../../css/style.css">
 </head>
-<body class="bg-gray-200">
+<body class="bg-indigo-100 flex flex-col justify-center gap-5 items-top p-6">
 
 <?php 
-
-$studentsData = [
-    'name' => 'Diego Majano',
-    'tarea1' => [
-        'percent' => 0.5,
-        'note' => 9
-    ],
-    'investiacion' =>         [
-        'percent' => 0.3,
-        'note' => 9
-    ]
-    ,
-    'parcial' => [
-        'percent' => 0.2,
-        'note' => 8
-    ]
-];
-
+include_once('student.php');
 ?>
 
-<div class="mx-6">    
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg md:m-4">
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+
+<div class="w-full max-w-4xl bg-white p-6 rounded-lg shadow-xl">
+    <h2 class="text-2xl font-bold text-center text-blue-950 mb-6">📚 Promedio de Notas</h2>
+
+    <div class="overflow-x-auto">
+        <table class="w-full text-sm text-center bg-white border border-gray-200 rounded-lg shadow-md">
+            <thead class="text-xs text-white uppercase bg-blue-900">
                 <tr>
-                    <th scope="col" class="px-6 py-3">
-                        Nombre
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Tarea 1
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Investigación
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Examen Parcial
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Promedio
-                    </th>
+                    <th scope="col" class="px-6 py-3">Nombre</th>
+                    <th scope="col" class="px-6 py-3">Tarea 1</th>
+                    <th scope="col" class="px-6 py-3">Investigación</th>
+                    <th scope="col" class="px-6 py-3">Examen Parcial</th>
+                    <th scope="col" class="px-6 py-3">Promedio</th>
+                    <th scope="col" class="px-6 py-3">Estado</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php 
-
+            <tbody class="text-gray-700">
+                
+                <?php                   
                     foreach($studentsData as $student){
+                        $tarea1 = (float)$student['tarea1'] * (float)$percents['tarea1'];
+                        $investigacion = (float)$student['investigacion'] * (float)$percents['investigacion'];
+                        $parcial = (float)$student['parcial'] * (float)$percents['parcial'];
+                        $promedio = $tarea1 + $investigacion + $parcial;
                 ?>
-                <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        <?= $student['name'] ?>
+
+                <tr class="border-b border-gray-300 even:bg-indigo-100 odd:bg-white hover:bg-indigo-300 transition duration-200">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                        <?= htmlspecialchars($student['name']) ?>
                     </th>
-                    <td class="px-6 py-4">
-                        Silver
+                    <td class="px-6 py-4"><?= number_format($student['tarea1'], 2) ?></td>
+                    <td class="px-6 py-4"><?= number_format($student['investigacion'], 2) ?></td>
+                    <td class="px-6 py-4"><?= number_format($student['parcial'], 2) ?></td>
+
+                    <td class="px-6 py-4 font-bold ">
+                        <?= number_format($promedio, 2) ?>                        
                     </td>
                     <td class="px-6 py-4">
-                        Laptop
-                    </td>
-                    <td class="px-6 py-4">
-                        $2999
-                    </td>
-                    <td class="px-6 py-4">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <span class="text-xs font-medium <?= $promedio >= 6 ? 'text-green-600' : 'text-red-600' ?>">
+                            <?= $promedio >= 6 ? 'Aprobado' : 'Reprobado' ?>
+                        </span>
                     </td>
                 </tr>    
-                
-                <?php 
-                
-                    }
-                
-                ?>
+
+                <?php } ?>
             </tbody>
         </table>
     </div>
-</div>
 
+    <div class="mt-6 text-center text-sm">
+        <a href="../" class="px-6 py-3 bg-indigo-900 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition">
+            Regresar al Inicio
+        </a>
+    </div>
+</div>
 
 </body>
 </html>

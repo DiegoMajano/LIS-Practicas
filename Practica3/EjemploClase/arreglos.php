@@ -67,5 +67,6 @@ echo "<br/>";
 
 print_r($person2);
 
+include_once('../../includes/backButton.php');
 
 ?>

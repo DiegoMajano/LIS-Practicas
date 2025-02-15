@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Práctica 3 - Ejercicios</title>
+    <title>Práctica 2 - Ejercicios</title>
     <link href="../css/output.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="bg-gray-200 flex flex-col min-h-screen">
     <header class="bg-blue-950 text-white py-5 shadow-md static">
         <div class="container mx-auto text-center py-2">
-            <h1 class="text-3xl font-bold">Práctica 3</h1>
-            <p class="text-sm mt-2">Arreglos y matrices en PHP</p>
+            <h1 class="text-3xl font-bold">Práctica 4</h1>
+            <p class="text-sm mt-2">Funciones en PHP</p>
         </div>
         <nav class="w-full text-center mt-3 ">
             <ul>
-                <li class="transition ease-in-out hover:underline"><a href="../" class=" ">Inicio</a></li>
+                <li class="transition ease-in-out hover:scale-110 hover:underline"><a href="../" class=" ">Inicio</a></li>
             </ul>
         </nav>
     </header>
@@ -25,41 +25,30 @@
             <h2 class="text-xl font-semibold text-gray-700 mb-4">Lista de Ejercicios</h2>
             <ul class="space-y-4">
                 <li>
-                    <a href="EjemploClase/arreglos.php" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
+                    <a href="EjemploClase/" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
                         Ejercicio 1 - Clase
                     </a>
-                </li>                
-                <li>
-                    <a href="EjemploClase/multidimensionales.php" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
-                        Ejercicio 2 - Clase
-                    </a>
-                </li>                
+                </li>                                                   
                 <li>
                     <a href="Ejemplo1/" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
                         Ejemplo 1
                     </a>
-                </li>                
+                </li>                                                   
                 <li>
-                    <a href="Ejemplo2/" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
+                    <a href="Ejemplo2/" class="block bg-slate-50 hover:bg-slate-200 border border-slate-200 rounded-lg p-4 text-blue-950">
                         Ejemplo 2
                     </a>
-                </li>                
+                </li>                                                   
                 <li>
-                    <a href="Ejemplo3/" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
+                    <a href="Ejemplo3/" class="block bg-slate-50 hover:bg-slate-300 border border-slate-200 rounded-lg p-4 text-blue-950">
                         Ejemplo 3
                     </a>
-                </li>                
+                </li>                                                   
                 <li>
                     <a href="Ejemplo4/" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
                         Ejemplo 4
                     </a>
-                </li>                
-                <li>
-                    <a href="discusion1/" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
-                        Discusión de resultados 2
-                    </a>
-                </li>                
-                                   
+                </li>                                                   
             </ul>
         </section>
     </main>

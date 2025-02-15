@@ -10,6 +10,7 @@ scale=1.0">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/uilightness/jquery-ui.css" />
     <link rel="stylesheet" href="css/jquery.multiselect.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/output.css">
 </head>
 
 <body>
@@ -92,7 +93,11 @@ scale=1.0">
             </form>
         </div>
     </div>
-</body>
+    <?php 
+    
+    include_once('../../includes/backButton.php');
+    
+    ?>
 <script src="js/checkFields.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 <script src = "http://ajax.googleapis.com/ajax/libs/jqueryui/1/jqueryui.min.js "></script>
@@ -102,5 +107,6 @@ scale=1.0">
         $("#location").multiselect();
     });
 </script>
+</body>
 
 </html>

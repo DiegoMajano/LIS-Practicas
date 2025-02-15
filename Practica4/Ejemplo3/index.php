@@ -11,6 +11,7 @@ scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="js/modernizr.custom.lis.js"></script>
     <script src="js/prefixfree.min.js"></script>
+    <link rel="stylesheet" href="../../css/output.css">
 </head>
 
 <body>
@@ -77,6 +78,11 @@ warning'>El mayor de 61, 37, 75, 184, 42, -303, 43, 56, -121, 226,
             </div>
         </div>
     </section>
+    <?php 
+    
+    include_once('../../includes/backButton.php');
+    
+    ?>
 </body>
 
 </html>

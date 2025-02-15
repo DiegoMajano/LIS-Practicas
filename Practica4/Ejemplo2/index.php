@@ -6,6 +6,7 @@
     <title>Serie de Fibonacci</title>
     <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/output.css">
 </head>
 
 <body>
@@ -86,7 +87,12 @@ primary" />
             <script src="js/validar.js"></script>
         <?php endif; ?>
     </div>
-</body>
+    <?php 
+    
+    include_once('../../includes/backButton.php');
+    
+    ?>
 <script src="js/modernizr.custom.lis.js"></script>
+</body>
 
 </html>

@@ -39,6 +39,11 @@
                         Práctica 4: Funciones en PHP
                     </a>
                 </li>
+                <li>
+                    <a href="Desafio1/LIS-PRACTICO-1/" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
+                        Desafio 1: TextilExport
+                    </a>
+                </li>
             </ul>
         </section>
     </main>

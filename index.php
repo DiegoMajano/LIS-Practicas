@@ -15,7 +15,7 @@
         </div>
     </header>
 
-    <main class="flex-grow container mx-auto mt-8 px-4 h-96">
+    <main class="flex-grow container mx-auto mt-8 px-4 h-100">
         <section class="bg-white shadow-md rounded-lg p-6">
             <h2 class="text-xl font-semibold text-gray-700 mb-4">Lista de Prácticas</h2>
             <ul class="space-y-4">
@@ -40,6 +40,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="Practica5/EjemploClase" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
+                        Práctica 5: Expresiones Regulares
+                    </a>
+                </li>
+                <li>
                     <a href="Desafio1/LIS-PRACTICO-1/" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
                         Desafio 1: TextilExport
                     </a>
@@ -48,7 +53,7 @@
         </section>
     </main>
 
-    <footer class="bg-gray-800 text-white py-4 mt-auto w-full">
+    <footer class="bg-gray-800 text-white py-4 mt-6 w-full ">
         <div class="container mx-auto text-center">
             <p>&copy; <?php echo date("Y"); ?> Prácticas LIS - <a class="hover:underline" href="https://github.com/DiegoMajano/">Diego José Rodríguez Majano</a></p>
         </div>

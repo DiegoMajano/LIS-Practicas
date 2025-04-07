@@ -14,7 +14,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <a class="btn btn-primary" href="#">Nuevo Editorial</a>
+                <a class="btn btn-primary" href="<?= PATH.'/Editoriales/create' ?>">Nuevo Editorial</a>
                 <br><br>
                 <table class="table table-striped table-bordered" id="tabla">
                     <thead class="table-dark">

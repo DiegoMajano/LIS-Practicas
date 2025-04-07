@@ -32,7 +32,10 @@
                                 <td><?= $autor['codigo_autor'] ?></td>
                                 <td><?= $autor['nombre_autor'] ?></td>
                                 <td><?= $autor['nacionalidad'] ?></td>
-                                <td></td>
+                                <td>
+                                    <a class="btn btn-warning" href="<?= PATH.'/Autores/create/' ?>">Editar</a>                                
+                                    <a class="btn btn-danger" href="<?= PATH."/Autores/delete/".$autor['codigo_autor'] ?>">Eliminar</a>
+                                </td>
                             </tr>
                         <?php endforeach?>
                     </tbody>

@@ -20,8 +20,10 @@ class AutoresController extends Controller{
         $this->render('index.php', $viewBag);
     }
 
-    public function create(){
-        $this->render('new.php');
+    public function create($params=array()){
+        $viewBag = $params;
+
+        $this->render('new.php', $viewBag);
     }
 
     public function insert() {
@@ -59,7 +61,45 @@ class AutoresController extends Controller{
                 $viewBag['autor'] = $autor;
                 $this->render('new.php', $viewBag);
             }
-        }          
+        }
+    }
+
+    public function update(){
+
+        $viewBag = array();
+
+        if(isset($_POST)){
+            $errores = array();
+
+            $autor['codigo_autor'] = $_POST['codigo_autor'];
+            $autor['nombre_autor'] = $_POST['nombre_autor'];
+            $autor['nacionalidad'] = $_POST['nacionalidad'];
+
+            if(!isCodigoAutor($autor['codigo_autor'])){
+                array_push($errores, "El código autor debe seguir formato AUTxxx");
+                return;
+            }
+
+            if(empty($autor['nombre_autor'])){
+                array_push($errores, "El nombre de la autor no puede estar vacío.");
+                return;
+            }
+
+            if(!isText($autor['nacionalidad'])){
+                array_push($errores, "El nacionalidad no es válido.");
+                return;
+            }
+
+            if(count($errores) == 0){
+                
+                $this->model->update($autor);
+                header('Location:'.PATH.'/Autores');
+            } else{
+                $viewBag['errores']=$errores;
+                $viewBag['autor'] = $autor;
+                $this->render('new.php', $viewBag);
+            }
+        }
     }
 
     public function delete($params){

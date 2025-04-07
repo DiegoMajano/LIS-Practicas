@@ -29,7 +29,7 @@
                         <input type="text" class="form-control" id="nacionalidad" name="nacionalidad" placeholder="Ingresa la nacionalidad">
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar</button>
-                    <a class="btn btn-danger" href="#">Cancelar</a>
+                    <a class="btn btn-danger" href="<?= PATH . '/Autores' ?>">Cancelar</a>
                 </form>
             </div>
         </div>

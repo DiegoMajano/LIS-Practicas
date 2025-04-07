@@ -51,7 +51,7 @@ abstract class Model {
             return $affectedRows;
         } catch (Exception $e){
             $this->closeDB();
-            return 0;
+            echo $e->getMessage();
         }
     }
 }

@@ -11,7 +11,7 @@ function isCodigoAutor($var){
     return preg_match('/^AUT[0-9]{3}$/', $var);
 }
 function isCodigoLibro($var){
-    return preg_match('/^LIB[0-9]{3}$/', $var);
+    return preg_match('/^LIB[0-9]{6}$/', $var);
 }
 function isCodigoGenero($var){
     return preg_match('/^[0-9]$/', $var);

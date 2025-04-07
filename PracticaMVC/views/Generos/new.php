@@ -29,7 +29,7 @@
                         <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingresa la descripción del género">
                     </div>                    
                     <button type="submit" class="btn btn-primary">Guardar</button>
-                    <a class="btn btn-danger" href="#">Cancelar</a>
+                    <a class="btn btn-danger" href="<?= PATH.'/Generos' ?>">Cancelar</a>
                 </form>
             </div>
         </div>

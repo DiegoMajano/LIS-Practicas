@@ -33,7 +33,7 @@
                         <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ingresa el teléfono del contacto">
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar</button>
-                    <a class="btn btn-danger" href="#">Cancelar</a>
+                    <a class="btn btn-danger" href="<?= PATH . '/Editoriales' ?>">Cancelar</a>
                 </form>
             </div>
         </div>

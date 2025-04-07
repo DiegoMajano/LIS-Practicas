@@ -27,7 +27,6 @@ class AutoresModel extends Model {
     
     public function delete($id){
         $query = "DELETE FROM autores WHERE codigo_autor = :codigo_autor";
-        
         return $this->setQuery($query, ['codigo_autor'=>$id]);
         
     }

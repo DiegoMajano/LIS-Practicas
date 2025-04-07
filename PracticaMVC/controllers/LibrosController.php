@@ -33,10 +33,18 @@ class LibrosController extends Controller {
 
             $libro['codigo_libro'] = $_POST['codigo_libro'];
             $libro['nombre_libro'] = $_POST['nombre_libro'];
-            $libro['nacionalidad'] = $_POST['nacionalidad'];
+            $libro['existencias'] = (int)$_POST['existencias'];
+            $libro['precio'] = (float)$_POST['precio'];
+            $libro['codigo_autor'] = $_POST['codigo_autor'];
+            $libro['codigo_editorial'] = $_POST['codigo_editorial'];
+            $libro['id_genero'] = (int)$_POST['id_genero'];
+            $libro['descripcion'] = $_POST['descripcion'];
+            $libro['imagen'] = NULL;
+
+            echo var_dump($libro);
 
             if(!isCodigolibro($libro['codigo_libro'])){
-                array_push($errores, "El código libro debe seguir formato LIBxxx");
+                array_push($errores, "El código libro debe seguir formato LIBxxxxxx");
                 return;
             }
 
@@ -45,15 +53,10 @@ class LibrosController extends Controller {
                 return;
             }
 
-            if(!isText($libro['nacionalidad'])){
-                array_push($errores, "El nacionalidad no es válido.");
-                return;
-            }
-
             if(count($errores) == 0){
                 
                 $this->model->insert($libro);
-                header('Location:'.PATH.'/libros');
+                header('Location:'.PATH.'/Libros');
             } else{
                 $viewBag['errores']=$errores;
                 $viewBag['libro'] = $libro;

@@ -27,15 +27,15 @@ class EditorialesController extends Controller{
     public function insert() {
 
         $viewBag = array();
+        $errores = array();
 
         if(isset($_POST)){
-            $errores = array();
 
             $editorial['codigo_editorial'] = $_POST['codigo_editorial'];
             $editorial['nombre_editorial'] = $_POST['nombre_editorial'];
             $editorial['contacto'] = $_POST['contacto'];
             $editorial['telefono'] = $_POST['telefono'];
-
+            
             if(!isCodigoEditorial($editorial['codigo_editorial'])){
                 array_push($errores, "El código editorial debe seguir formato EDIxxx");
                 return;
@@ -56,8 +56,9 @@ class EditorialesController extends Controller{
                 return;
             }
 
+            echo count($errores);  
             if(count($errores) == 0){
-                
+                echo count($errores);
                 $this->model->insert($editorial);
                 header('Location:'.PATH.'/Editoriales');
             } else{

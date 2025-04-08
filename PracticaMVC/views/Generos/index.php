@@ -32,7 +32,15 @@
                                 <td><?= $genero['id_genero'] ?></td>
                                 <td><?= $genero['nombre_genero'] ?></td>
                                 <td><?= $genero['descripcion'] ?></td>
-                                <td></td>
+                                <td>
+                                    <form action="<?= PATH.'/Generos/edit/'.$genero['id_genero'] ?>" method="post" style="display:inline;">
+                                        <input type="hidden" name="id_genero" value="<?= $genero['id_genero'] ?>">
+                                        <input type="hidden" name="nombre_genero" value="<?= $genero['nombre_genero'] ?>">
+                                        <input type="hidden" name="descripcion" value="<?= $genero['descripcion'] ?>">
+                                        <button type="submit" class="btn btn-warning">Editar</button>
+                                    </form>
+                                    <a class="btn btn-danger" href="<?= PATH."/Generos/delete/".$genero['id_genero'] ?>">Eliminar</a>
+                                </td>
                             </tr>
                         <?php endforeach?>
                     </tbody>

@@ -14,19 +14,19 @@
         </div>
         <div class="row">
             <div class="col-md-7">
-                <form role="form" action=" <?= PATH ?>/Generos/insert" method="POST">
+                <form role="form" action="<?= isset($genero) ? PATH .'/Generos/update' : PATH .'/Generos/insert'?>" method="POST">
                     <input type="hidden" name="op" value="insertar"/>
                     <div class="mb-3">
                         <label for="codigo" class="form-label">ID del Género:</label>
-                        <input type="text" class="form-control" name="id_genero" id="id_genero" placeholder="Ingresa el id del género">
+                        <input <?= isset($genero) ? 'readonly' : '' ?> value="<?= isset($genero) ? $genero['id_genero'] :'' ?>" type="text" class="form-control" name="id_genero" id="id_genero" placeholder="Ingresa el id del género">
                     </div>
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre del Género:</label>
-                        <input type="text" class="form-control" name="nombre_genero" id="nombre_genero" placeholder="Ingresa el nombre del género">
+                        <input value="<?= isset($genero) ? $genero['nombre_genero'] :'' ?>" type="text" class="form-control" name="nombre_genero" id="nombre_genero" placeholder="Ingresa el nombre del género">
                     </div>
                     <div class="mb-3">
                         <label for="descripcion" class="form-label">Descripcion:</label>
-                        <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingresa la descripción del género">
+                        <input value="<?= isset($genero) ? $genero['descripcion'] :'' ?>" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingresa la descripción del género">
                     </div>                    
                     <button type="submit" class="btn btn-primary">Guardar</button>
                     <a class="btn btn-danger" href="<?= PATH.'/Generos' ?>">Cancelar</a>

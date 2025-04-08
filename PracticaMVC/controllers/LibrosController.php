@@ -65,6 +65,13 @@ class LibrosController extends Controller {
         }          
     }
 
+    public function edit($params){
+        $viewBag = array();
+        $codigo=$params[0];
+        $viewBag['libro'] = $this->model->get($codigo)[0];
+        $this->render('new.php', $viewBag);
+    }
+
     public function delete($params){
         $codigo=$params[0];
         $this->model->delete($codigo);

@@ -23,11 +23,10 @@
                             <th>Nombre del Libro</th>
                             <th>Existencias</th>
                             <th>Precio</th>
-                            <th>Código Autor</th>
-                            <th>Código Editorial</th>
-                            <th>ID género</th>
+                            <th>Autor</th>
+                            <th>Editorial</th>
+                            <th>Género</th>
                             <th>Descripcion</th>
-                            <th>Imagen</th>
                             <th>Operaciones</th>
                         </tr>
                     </thead>
@@ -39,12 +38,25 @@
                                 <td><?= $libro['nombre_libro'] ?></td>
                                 <td><?= $libro['existencias'] ?></td>
                                 <td><?= $libro['precio'] ?></td>
-                                <td><?= $libro['codigo_autor'] ?></td>
-                                <td><?= $libro['codigo_editorial'] ?></td>
-                                <td><?= $libro['id_genero'] ?></td>
+                                <td><?= $libro['nombre_autor'] ?></td>
+                                <td><?= $libro['nombre_editorial'] ?></td>
+                                <td><?= $libro['nombre_genero'] ?></td>
                                 <td><?= $libro['descripcion'] ?></td>
-                                <td><?= $libro['imagen'] ?></td>
-                                <td></td>
+                                <td>
+                                <form action="<?= PATH.'/Libros/edit/'.$libro['codigo_libro'] ?>" method="post" style="display:inline;">
+                                        <input type="hidden" name="codigo_libro" value="<?= $libro['codigo_libro'] ?>">
+                                        <input type="hidden" name="nombre_libro" value="<?= $libro['nombre_libro'] ?>">
+                                        <input type="hidden" name="existencias" value="<?= $libro['existencias'] ?>">
+                                        <input type="hidden" name="precio" value="<?= $libro['precio'] ?>">
+                                        <input type="hidden" name="codigo_autor" value="<?= $libro['codigo_autor'] ?>">
+                                        <input type="hidden" name="codigo_editorial" value="<?= $libro['codigo_editorial'] ?>">
+                                        <input type="hidden" name="id_genero" value="<?= $libro['id_genero'] ?>">
+                                        <input type="hidden" name="descripcion" value="<?= $libro['descripcion'] ?>">
+                                        <button type="submit" class="btn btn-warning">Editar</button>
+                                    </form>
+                                    <a class="btn btn-danger" href="<?= PATH."/Libros/delete/".$libro['codigo_libro'] ?>">Eliminar</a>
+
+                                </td>
                             </tr>
                         <?php endforeach?>
                     </tbody>

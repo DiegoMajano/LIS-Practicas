@@ -14,11 +14,11 @@
         </div>
         <div class="row">
             <div class="col-md-7">
-                <form role="form" action=" <?= PATH ?>/Libros/insert" method="POST">
+                <form role="form" action="<?= isset($libro) ? PATH .'/Libros/update' : PATH .'/Libros/insert'?>" method="POST">
                     <input type="hidden" name="op" value="insertar"/>
                     <div class="mb-3">
                         <label for="codigo" class="form-label">Código del Libro:</label>
-                        <input type="text" class="form-control" name="codigo_libro" id="codigo_libro" placeholder="Ingresa el código del libro">
+                        <input <?= isset($libro) ? 'readonly' : '' ?> value="<?= isset($libro) ? $libro['id_genero'] :'' ?>" type="text" class="form-control" name="codigo_libro" id="codigo_libro" placeholder="Ingresa el código del libro">
                     </div>
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre del Libro:</label>
@@ -37,8 +37,20 @@
                         <input type="text" class="form-control" id="codigo_autor" name="codigo_autor" placeholder="Ingresa el código del autor">
                     </div>                    
                     <div class="mb-3">
+                        <label <?= isset($libro) ? 'hidden' : '' ?> for="codigo_autor" class="form-label">Código del Autor:</label>
+                        <input <?= isset($libro) ? 'hidden' : '' ?> type="text" class="form-control" id="codigo_autor" name="codigo_autor" placeholder="Ingresa el código del autor">
+                    </div>                    
+                    <div class="mb-3">
                         <label for="codigo_editorial" class="form-label">Código del Editorial:</label>
                         <input type="text" class="form-control" id="codigo_editorial" name="codigo_editorial" placeholder="Ingresa el código de la editorial">
+                    </div>                    
+                    <div class="mb-3">
+                        <label <?= isset($libro) ? 'hidden' : '' ?> for="codigo_editorial" class="form-label">Código del Editorial:</label>
+                        <input <?= isset($libro) ? 'hidden' : '' ?> type="text" class="form-control" id="codigo_editorial" name="codigo_editorial" placeholder="Ingresa el código de la editorial">
+                    </div>                    
+                    <div class="mb-3">
+                        <label <?= isset($libro) ? 'hidden' : '' ?> for="id_genero" class="form-label">ID del Género:</label>
+                        <input <?= isset($libro) ? 'hidden' : '' ?> type="number" class="form-control" id="id_genero" name="id_genero" placeholder="Ingresa el ID del género">
                     </div>                    
                     <div class="mb-3">
                         <label for="id_genero" class="form-label">ID del Género:</label>

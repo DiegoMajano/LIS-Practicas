@@ -33,7 +33,12 @@
                                 <td><?= $autor['nombre_autor'] ?></td>
                                 <td><?= $autor['nacionalidad'] ?></td>
                                 <td>
-                                    <a class="btn btn-warning" href="<?= PATH.'/Autores/create/' ?>">Editar</a>                                
+                                    <form action="<?= PATH.'/Autores/edit/'.$autor['codigo_autor'] ?>" method="post" style="display:inline;">
+                                        <input type="hidden" name="codigo_autor" value="<?= $autor['codigo_autor'] ?>">
+                                        <input type="hidden" name="nombre_autor" value="<?= $autor['nombre_autor'] ?>">
+                                        <input type="hidden" name="nacionalidad" value="<?= $autor['nacionalidad'] ?>">
+                                        <button type="submit" class="btn btn-warning">Editar</button>
+                                    </form>
                                     <a class="btn btn-danger" href="<?= PATH."/Autores/delete/".$autor['codigo_autor'] ?>">Eliminar</a>
                                 </td>
                             </tr>

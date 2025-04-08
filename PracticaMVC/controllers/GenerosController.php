@@ -61,6 +61,50 @@ class GenerosController extends Controller {
             }
         }          
     }
+    public function update() {
+
+        $viewBag = array();
+
+        if(isset($_POST)){
+            $errores = array();
+
+            $genero['id_genero'] = $_POST['id_genero'];
+            $genero['nombre_genero'] = $_POST['nombre_genero'];
+            $genero['descripcion'] = $_POST['descripcion'];
+
+            if(!isCodigoGenero($genero['id_genero'])){
+                array_push($errores, "El id del género debe seguir formato x");
+                return;
+            }
+
+            if(empty($genero['nombre_genero'])){
+                array_push($errores, "El nombre del género no puede estar vacío.");
+                return;
+            }
+
+            if(!isText($genero['descripcion'])){
+                array_push($errores, "El descripcion no es válida.");
+                return;
+            }
+
+            if(count($errores) == 0){
+                
+                $this->model->update($genero);
+                header('Location:'.PATH.'/Generos');
+            } else{
+                $viewBag['errores']=$errores;
+                $viewBag['genero'] = $genero;
+                $this->render('new.php', $viewBag);
+            }
+        }          
+    }
+
+    public function edit($params){
+        $viewBag = array();
+        $codigo=$params[0];
+        $viewBag['genero'] = $this->model->get($codigo)[0];
+        $this->render('new.php', $viewBag);
+    }
 
     public function delete($params){
         $codigo=$params[0];

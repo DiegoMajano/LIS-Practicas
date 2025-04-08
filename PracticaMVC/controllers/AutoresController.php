@@ -102,6 +102,15 @@ class AutoresController extends Controller{
         }
     }
 
+    public function edit($params){
+        $viewBag = array();
+
+        $codigo_autor = $params[0];
+    
+        $viewBag['autor'] = $this->model->get($codigo_autor)[0];
+        $this->render('new.php', $viewBag);
+    }
+
     public function delete($params){
         $codigo=$params[0];
         $this->model->delete($codigo);

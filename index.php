@@ -54,6 +54,11 @@
                         Práctica 6: Programación Orientada a Objetos en PHP
                     </a>
                 </li>
+                <li>
+                    <a href="PracticaMVC/Editoriales" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
+                        Práctica MVC: Programación en PHP implementando arquitectura MVC con conexión a base de datos
+                    </a>
+                </li>
             </ul>
         </section>
     </main>

@@ -18,7 +18,7 @@
                 <br><br>
                 <table class="table table-striped table-bordered" id="tabla">
                     <thead class="table-dark">
-                        <tr>
+                        <tr class="text-center">
                             <th>Código del Autor</th>
                             <th>Nombre del Autor</th>
                             <th>Nacionalidad</th>
@@ -32,14 +32,18 @@
                                 <td><?= $autor['codigo_autor'] ?></td>
                                 <td><?= $autor['nombre_autor'] ?></td>
                                 <td><?= $autor['nacionalidad'] ?></td>
-                                <td>
-                                    <form action="<?= PATH.'/Autores/edit/'.$autor['codigo_autor'] ?>" method="post" style="display:inline;">
-                                        <input type="hidden" name="codigo_autor" value="<?= $autor['codigo_autor'] ?>">
-                                        <input type="hidden" name="nombre_autor" value="<?= $autor['nombre_autor'] ?>">
-                                        <input type="hidden" name="nacionalidad" value="<?= $autor['nacionalidad'] ?>">
-                                        <button type="submit" class="btn btn-warning">Editar</button>
-                                    </form>
-                                    <a class="btn btn-danger" href="<?= PATH."/Autores/delete/".$autor['codigo_autor'] ?>">Eliminar</a>
+                                <td class="align-middle">
+                                    <div class="d-flex justify-content-center gap-1 align-items-center">
+                                        <div>
+                                            <form action="<?= PATH.'/Autores/edit/'.$autor['codigo_autor'] ?>" method="post" style="display:inline;">
+                                                <input type="hidden" name="codigo_autor" value="<?= $autor['codigo_autor'] ?>">
+                                                <input type="hidden" name="nombre_autor" value="<?= $autor['nombre_autor'] ?>">
+                                                <input type="hidden" name="nacionalidad" value="<?= $autor['nacionalidad'] ?>">
+                                                <button type="submit" class="btn btn-warning">Editar</button>
+                                            </form>
+                                        </div>
+                                        <a class="btn btn-danger" href="<?= PATH."/Autores/delete/".$autor['codigo_autor'] ?>">Eliminar</a>
+                                    </div>
                                 </td>
                             </tr>
                         <?php endforeach?>

@@ -18,7 +18,7 @@
                 <br><br>
                 <table class="table table-striped table-bordered" id="tabla">
                     <thead class="table-dark">
-                        <tr>
+                        <tr class="text-center">
                             <th>Código del Género</th>
                             <th>Nombre del Género</th>
                             <th>Descripcion</th>
@@ -32,14 +32,18 @@
                                 <td><?= $genero['id_genero'] ?></td>
                                 <td><?= $genero['nombre_genero'] ?></td>
                                 <td><?= $genero['descripcion'] ?></td>
-                                <td>
-                                    <form action="<?= PATH.'/Generos/edit/'.$genero['id_genero'] ?>" method="post" style="display:inline;">
-                                        <input type="hidden" name="id_genero" value="<?= $genero['id_genero'] ?>">
-                                        <input type="hidden" name="nombre_genero" value="<?= $genero['nombre_genero'] ?>">
-                                        <input type="hidden" name="descripcion" value="<?= $genero['descripcion'] ?>">
-                                        <button type="submit" class="btn btn-warning">Editar</button>
-                                    </form>
-                                    <a class="btn btn-danger" href="<?= PATH."/Generos/delete/".$genero['id_genero'] ?>">Eliminar</a>
+                                <td class="align-middle">
+                                    <div class="d-flex justify-content-center gap-1 align-items-center">
+                                        <div>
+                                            <form action="<?= PATH.'/Generos/edit/'.$genero['id_genero'] ?>" method="post" style="display:inline;">
+                                                <input type="hidden" name="id_genero" value="<?= $genero['id_genero'] ?>">
+                                                <input type="hidden" name="nombre_genero" value="<?= $genero['nombre_genero'] ?>">
+                                                <input type="hidden" name="descripcion" value="<?= $genero['descripcion'] ?>">
+                                                <button type="submit" class="btn btn-warning">Editar</button>
+                                            </form>
+                                        </div>
+                                        <a class="btn btn-danger" href="<?= PATH."/Generos/delete/".$genero['id_genero'] ?>">Eliminar</a>
+                                    </div>
                                 </td>
                             </tr>
                         <?php endforeach?>

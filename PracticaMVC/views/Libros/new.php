@@ -18,23 +18,23 @@
                     <input type="hidden" name="op" value="insertar"/>
                     <div class="mb-3">
                         <label for="codigo" class="form-label">Código del Libro:</label>
-                        <input <?= isset($libro) ? 'readonly' : '' ?> value="<?= isset($libro) ? $libro['codigo_libro'] :'' ?>" type="text" class="form-control" name="codigo_libro" id="codigo_libro" placeholder="Ingresa el código del libro">
+                        <input required <?= isset($libro) ? 'readonly' : '' ?> value="<?= isset($libro) ? $libro['codigo_libro'] :'' ?>" type="text" class="form-control" name="codigo_libro" id="codigo_libro" placeholder="Ingresa el código del libro">
                     </div>
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre del Libro:</label>
-                        <input value="<?= isset($libro) ? $libro['nombre_libro'] :'' ?>" type="text" class="form-control" name="nombre_libro" id="nombre_libro" placeholder="Ingresa el nombre del libro">
+                        <input required value="<?= isset($libro) ? $libro['nombre_libro'] :'' ?>" type="text" class="form-control" name="nombre_libro" id="nombre_libro" placeholder="Ingresa el nombre del libro">
                     </div>
                     <div class="mb-3">
                         <label for="existencias" class="form-label">Existencias:</label>
-                        <input value="<?= isset($libro) ? $libro['existencias'] :'' ?>" type="text" class="form-control" id="existencias" name="existencias" placeholder="Ingresa la existencias del libro">
+                        <input required value="<?= isset($libro) ? $libro['existencias'] :'' ?>" type="number" min="0" class="form-control" id="existencias" name="existencias" placeholder="Ingresa la existencias del libro">
                     </div>                    
                     <div class="mb-3">
                         <label for="precio" class="form-label">Precio:</label>
-                        <input value="<?= isset($libro) ? $libro['precio'] :'' ?>" type="text" class="form-control" id="precio" name="precio" placeholder="Ingresa el precio del libro">
+                        <input required value="<?= isset($libro) ? $libro['precio'] :'' ?>" type="number" min="0.00" step="0.05" class="form-control" id="precio" name="precio" placeholder="Ingresa el precio del libro">
                     </div>                    
                     <div class="mb-3">
                         <label for="codigo_autor" class="form-label">Código del Autor:</label>
-                        <select class="form-control" name="codigo_autor" id="codigo_autor" placeholder="Seleccione el autor">
+                        <select required class="form-control" name="codigo_autor" id="codigo_autor" placeholder="Seleccione el autor">
                             <option value="">Seleccionar el autor</option>
                             <?php 
                                 if(isset($libro)){
@@ -50,7 +50,7 @@
                     </div>                                       
                     <div class="mb-3">
                         <label for="codigo_editorial" class="form-label">Código del Editorial:</label>
-                        <select class="form-control" name="codigo_editorial" id="codigo_editorial" placeholder="Seleccione la editorial">   
+                        <select required class="form-control" name="codigo_editorial" id="codigo_editorial" placeholder="Seleccione la editorial">   
                             <option value="">Seleccionar el editorial</option>
                             <?php 
                                 if(isset($libro)){
@@ -66,7 +66,7 @@
                     </div>                      
                     <div class="mb-3">
                         <label for="id_genero" class="form-label">ID del Género:</label>
-                        <select class="form-control" name="id_genero" id="id_genero" placeholder="Seleccione el género">
+                        <select required class="form-control" name="id_genero" id="id_genero" placeholder="Seleccione el género">
                             <option value="">Seleccionar Género</option>
                             <?php 
                                 if(isset($libro)){
@@ -82,7 +82,7 @@
                     </div>                    
                     <div class="mb-3">
                         <label for="descripcion" class="form-label">Descripción:</label>
-                        <input value="<?= isset($libro) ? $libro['lib_descripcion'] :'' ?>" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingresa la descripción del libro">
+                        <input required value="<?= isset($libro) ? $libro['lib_descripcion'] :'' ?>" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingresa la descripción del libro">
                     </div>                    
                     <button type="submit" class="btn btn-primary">Guardar</button>
                     <a class="btn btn-danger" href="<?= PATH.'/Libros' ?>">Cancelar</a>

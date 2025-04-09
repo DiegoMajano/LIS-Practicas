@@ -18,7 +18,7 @@
                 <br><br>
                 <table class="table table-striped table-bordered" id="tabla">
                     <thead class="table-dark">
-                        <tr>
+                        <tr class="text-center">
                             <th>Código del Editorial</th>
                             <th>Nombre del Editorial</th>
                             <th>Contacto</th>
@@ -34,15 +34,19 @@
                                 <td><?= $editorial['nombre_editorial'] ?></td>
                                 <td><?= $editorial['contacto'] ?></td>
                                 <td><?= $editorial['telefono'] ?></td>
-                                <td>
-                                <form action="<?= PATH.'/Editoriales/edit/'.$editorial['codigo_editorial'] ?>" method="post" style="display:inline;">
-                                        <input type="hidden" name="codigo_editorial" value="<?= $editorial['codigo_editorial'] ?>">
-                                        <input type="hidden" name="nombre_editorial" value="<?= $editorial['nombre_editorial'] ?>">
-                                        <input type="hidden" name="contacto" value="<?= $editorial['contacto'] ?>">
-                                        <input type="hidden" name="telefono" value="<?= $editorial['telefono'] ?>">
-                                        <button type="submit" class="btn btn-warning">Editar</button>
-                                    </form>
-                                    <a class="btn btn-danger" href="<?= PATH."/editoriales/delete/".$editorial['codigo_editorial'] ?>">Eliminar</a>
+                                <td class="align-middle">
+                                    <div class="d-flex justify-content-center gap-1 align-items-center">
+                                        <div>
+                                            <form action="<?= PATH.'/Editoriales/edit/'.$editorial['codigo_editorial'] ?>" method="post" style="display:inline;">
+                                                <input type="hidden" name="codigo_editorial" value="<?= $editorial['codigo_editorial'] ?>">
+                                                <input type="hidden" name="nombre_editorial" value="<?= $editorial['nombre_editorial'] ?>">
+                                                <input type="hidden" name="contacto" value="<?= $editorial['contacto'] ?>">
+                                                <input type="hidden" name="telefono" value="<?= $editorial['telefono'] ?>">
+                                                <button type="submit" class="btn btn-warning">Editar</button>
+                                            </form>
+                                        </div>
+                                        <a class="btn btn-danger" href="<?= PATH."/editoriales/delete/".$editorial['codigo_editorial'] ?>">Eliminar</a>
+                                    </div>
                                 </td>
                             </tr>
                         <?php endforeach?>

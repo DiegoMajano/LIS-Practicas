@@ -18,15 +18,15 @@
                     <input type="hidden" name="op" value="actualizar"/>
                     <div class="mb-3">
                         <label for="codigo" class="form-label">Código del Autor:</label>
-                        <input <?= isset($autor) ? 'readonly' : '' ?> value="<?= isset($autor) ? $autor['codigo_autor'] : '' ?>" type="text" class="form-control" name="codigo_autor" id="codigo_autor" placeholder="Ingresa el código del autor">
+                        <input required <?= isset($autor) ? 'readonly' : '' ?> value="<?= isset($autor) ? $autor['codigo_autor'] : '' ?>" type="text" class="form-control" name="codigo_autor" id="codigo_autor" placeholder="Ingresa el código del autor">
                     </div>
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre del Autor:</label>
-                        <input value="<?= isset($autor) ? $autor['nombre_autor'] : '' ?>" type="text" class="form-control" name="nombre_autor" id="nombre_autor" placeholder="Ingresa el nombre del autor">
+                        <input required value="<?= isset($autor) ? $autor['nombre_autor'] : '' ?>" type="text" class="form-control" name="nombre_autor" id="nombre_autor" placeholder="Ingresa el nombre del autor">
                     </div>
                     <div class="mb-3">
                         <label for="nacionalidad" class="form-label">Nacionalidad:</label>
-                        <input value="<?= isset($autor) ? $autor['nacionalidad'] : '' ?>" type="text" class="form-control" id="nacionalidad" name="nacionalidad" placeholder="Ingresa la nacionalidad">
+                        <input required value="<?= isset($autor) ? $autor['nacionalidad'] : '' ?>" type="text" class="form-control" id="nacionalidad" name="nacionalidad" placeholder="Ingresa la nacionalidad">
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar</button>
                     <a class="btn btn-danger" href="<?= PATH . '/Autores' ?>">Cancelar</a>

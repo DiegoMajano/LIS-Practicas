@@ -18,47 +18,71 @@
                     <input type="hidden" name="op" value="insertar"/>
                     <div class="mb-3">
                         <label for="codigo" class="form-label">Código del Libro:</label>
-                        <input <?= isset($libro) ? 'readonly' : '' ?> value="<?= isset($libro) ? $libro['id_genero'] :'' ?>" type="text" class="form-control" name="codigo_libro" id="codigo_libro" placeholder="Ingresa el código del libro">
+                        <input <?= isset($libro) ? 'readonly' : '' ?> value="<?= isset($libro) ? $libro['codigo_libro'] :'' ?>" type="text" class="form-control" name="codigo_libro" id="codigo_libro" placeholder="Ingresa el código del libro">
                     </div>
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre del Libro:</label>
-                        <input type="text" class="form-control" name="nombre_libro" id="nombre_libro" placeholder="Ingresa el nombre del libro">
+                        <input value="<?= isset($libro) ? $libro['nombre_libro'] :'' ?>" type="text" class="form-control" name="nombre_libro" id="nombre_libro" placeholder="Ingresa el nombre del libro">
                     </div>
                     <div class="mb-3">
                         <label for="existencias" class="form-label">Existencias:</label>
-                        <input type="text" class="form-control" id="existencias" name="existencias" placeholder="Ingresa la existencias del libro">
+                        <input value="<?= isset($libro) ? $libro['existencias'] :'' ?>" type="text" class="form-control" id="existencias" name="existencias" placeholder="Ingresa la existencias del libro">
                     </div>                    
                     <div class="mb-3">
                         <label for="precio" class="form-label">Precio:</label>
-                        <input type="text" class="form-control" id="precio" name="precio" placeholder="Ingresa el precio del libro">
+                        <input value="<?= isset($libro) ? $libro['precio'] :'' ?>" type="text" class="form-control" id="precio" name="precio" placeholder="Ingresa el precio del libro">
                     </div>                    
                     <div class="mb-3">
                         <label for="codigo_autor" class="form-label">Código del Autor:</label>
-                        <input type="text" class="form-control" id="codigo_autor" name="codigo_autor" placeholder="Ingresa el código del autor">
-                    </div>                    
-                    <div class="mb-3">
-                        <label <?= isset($libro) ? 'hidden' : '' ?> for="codigo_autor" class="form-label">Código del Autor:</label>
-                        <input <?= isset($libro) ? 'hidden' : '' ?> type="text" class="form-control" id="codigo_autor" name="codigo_autor" placeholder="Ingresa el código del autor">
-                    </div>                    
+                        <select class="form-control" name="codigo_autor" id="codigo_autor" placeholder="Seleccione el autor">
+                            <option value="">Seleccionar el autor</option>
+                            <?php 
+                                if(isset($libro)){
+                                    echo '<option selected value="'.$libro['codigo_autor'].'">'.$libro['codigo_autor']. ' - ' .$libro['nombre_autor'].'</option>';
+                                } else{
+                                    echo '<option value="">Seleccionar el autor</option>';
+                                }
+                                foreach ($autores as $autor) {
+                                    echo '<option value="'.$autor['codigo_autor'].'">'.$autor['codigo_autor']. ' - ' .$autor['nombre_autor'].'</option>';
+                                }  
+                            ?>
+                        </select>
+                    </div>                                       
                     <div class="mb-3">
                         <label for="codigo_editorial" class="form-label">Código del Editorial:</label>
-                        <input type="text" class="form-control" id="codigo_editorial" name="codigo_editorial" placeholder="Ingresa el código de la editorial">
-                    </div>                    
-                    <div class="mb-3">
-                        <label <?= isset($libro) ? 'hidden' : '' ?> for="codigo_editorial" class="form-label">Código del Editorial:</label>
-                        <input <?= isset($libro) ? 'hidden' : '' ?> type="text" class="form-control" id="codigo_editorial" name="codigo_editorial" placeholder="Ingresa el código de la editorial">
-                    </div>                    
-                    <div class="mb-3">
-                        <label <?= isset($libro) ? 'hidden' : '' ?> for="id_genero" class="form-label">ID del Género:</label>
-                        <input <?= isset($libro) ? 'hidden' : '' ?> type="number" class="form-control" id="id_genero" name="id_genero" placeholder="Ingresa el ID del género">
-                    </div>                    
+                        <select class="form-control" name="codigo_editorial" id="codigo_editorial" placeholder="Seleccione la editorial">   
+                            <option value="">Seleccionar el editorial</option>
+                            <?php 
+                                if(isset($libro)){
+                                    echo '<option value="'.$libro['codigo_editorial'].'" selected>'.$libro['codigo_editorial']. ' - ' .$libro['nombre_editorial'].'</option>';
+                                } else{
+                                    echo '<option value="">Seleccionar el género</option>';
+                                }
+                                foreach ($editoriales as $editorial) {
+                                    echo '<option value="'.$editorial['codigo_editorial'].'">'.$editorial['codigo_editorial']. ' - ' .$editorial['nombre_editorial'].'</option>';
+                                }  
+                            ?>
+                        </select>
+                    </div>                      
                     <div class="mb-3">
                         <label for="id_genero" class="form-label">ID del Género:</label>
-                        <input type="number" class="form-control" id="id_genero" name="id_genero" placeholder="Ingresa el ID del género">
+                        <select class="form-control" name="id_genero" id="id_genero" placeholder="Seleccione el género">
+                            <option value="">Seleccionar Género</option>
+                            <?php 
+                                if(isset($libro)){
+                                    echo '<option value="'.$libro['id_genero'].'" selected>'.$libro['id_genero']. ' - ' .$libro['nombre_genero'].'</option>';
+                                } else{
+                                    echo '<option value="">Seleccionar el género</option>';
+                                }
+                                foreach ($generos as $genero) {
+                                    echo '<option value="'.$genero['id_genero'].'">'.$genero['id_genero']. ' - ' .$genero['nombre_genero'].'</option>';
+                                }  
+                            ?>
+                        </select>
                     </div>                    
                     <div class="mb-3">
                         <label for="descripcion" class="form-label">Descripción:</label>
-                        <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingresa la descripción del libro">
+                        <input value="<?= isset($libro) ? $libro['lib_descripcion'] :'' ?>" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingresa la descripción del libro">
                     </div>                    
                     <button type="submit" class="btn btn-primary">Guardar</button>
                     <a class="btn btn-danger" href="<?= PATH.'/Libros' ?>">Cancelar</a>

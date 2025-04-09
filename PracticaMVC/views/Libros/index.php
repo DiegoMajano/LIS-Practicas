@@ -41,7 +41,7 @@
                                 <td><?= $libro['nombre_autor'] ?></td>
                                 <td><?= $libro['nombre_editorial'] ?></td>
                                 <td><?= $libro['nombre_genero'] ?></td>
-                                <td><?= $libro['descripcion'] ?></td>
+                                <td><?= $libro['lib_descripcion'] ?></td>
                                 <td>
                                 <form action="<?= PATH.'/Libros/edit/'.$libro['codigo_libro'] ?>" method="post" style="display:inline;">
                                         <input type="hidden" name="codigo_libro" value="<?= $libro['codigo_libro'] ?>">
@@ -51,7 +51,7 @@
                                         <input type="hidden" name="codigo_autor" value="<?= $libro['codigo_autor'] ?>">
                                         <input type="hidden" name="codigo_editorial" value="<?= $libro['codigo_editorial'] ?>">
                                         <input type="hidden" name="id_genero" value="<?= $libro['id_genero'] ?>">
-                                        <input type="hidden" name="descripcion" value="<?= $libro['descripcion'] ?>">
+                                        <input type="hidden" name="descripcion" value="<?= $libro['lib_descripcion'] ?>">
                                         <button type="submit" class="btn btn-warning">Editar</button>
                                     </form>
                                     <a class="btn btn-danger" href="<?= PATH."/Libros/delete/".$libro['codigo_libro'] ?>">Eliminar</a>

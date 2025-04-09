@@ -7,15 +7,15 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="<?= PATH?>">Inicio</a>
+          <a class="nav-link" href="<?=PATH?>">Inicio</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="autoresDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Autores
           </a>
           <ul class="dropdown-menu" aria-labelledby="autoresDropdown">
-            <li><a class="dropdown-item" href="<?= PATH ?> /Autores/create">Registrar autor</a></li>
-            <li><a class="dropdown-item" href="<?= PATH ?> /Autores/">Ver lista de autores</a></li>
+            <li><a class="dropdown-item" href="<?=PATH.'/Autores/create' ?>">Registrar autor</a></li>
+            <li><a class="dropdown-item" href="<?=PATH.'/Autores' ?>">Ver lista de autores</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -23,8 +23,8 @@
             Géneros
           </a>
           <ul class="dropdown-menu" aria-labelledby="generosDropdown">
-            <li><a class="dropdown-item" href="<?= PATH ?> /Generos/create">Registrar género</a></li>
-            <li><a class="dropdown-item" href="<?= PATH ?> /Generos/">Ver lista de géneros</a></li>
+            <li><a class="dropdown-item" href="<?=PATH ?> /Generos/create">Registrar género</a></li>
+            <li><a class="dropdown-item" href="<?=PATH ?> /Generos/">Ver lista de géneros</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -32,8 +32,8 @@
             Editoriales
           </a>
           <ul class="dropdown-menu" aria-labelledby="editorialesDropdown">
-            <li><a class="dropdown-item" href="<?= PATH ?> /Editoriales/create">Registrar editorial</a></li>
-            <li><a class="dropdown-item" href="<?= PATH ?> /Editoriales/">Ver lista de editoriales</a></li>
+            <li><a class="dropdown-item" href="<?=PATH ?> /Editoriales/create">Registrar editorial</a></li>
+            <li><a class="dropdown-item" href="<?=PATH ?> /Editoriales/">Ver lista de editoriales</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -41,8 +41,8 @@
             Libros
           </a>
           <ul class="dropdown-menu" aria-labelledby="librosDropdown">
-            <li><a class="dropdown-item" href="<?= PATH ?> /Libros/create">Registrar libro</a></li>
-            <li><a class="dropdown-item" href="<?= PATH ?> /Libros/">Ver lista de libros</a></li>
+            <li><a class="dropdown-item" href="<?=PATH ?> /Libros/create">Registrar libro</a></li>
+            <li><a class="dropdown-item" href="<?=PATH ?> /Libros/">Ver lista de libros</a></li>
           </ul>
         </li>
       </ul>

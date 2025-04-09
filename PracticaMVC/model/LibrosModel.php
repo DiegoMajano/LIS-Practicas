@@ -7,20 +7,21 @@ class LibrosModel extends Model{
     public function get($id){
         if($id == ''){
 
-            $query = "SELECT * FROM libros
-                        INNER JOIN autores ON libros.codigo_autor = autores.codigo_autor
-                        INNER JOIN editoriales ON libros.codigo_editorial = editoriales.codigo_editorial
-                        INNER JOIN generos ON libros.id_genero = generos.id_genero
-                        order by libros.codigo_libro ASC
+            $query = "SELECT *, lib.descripcion as lib_descripcion, g.descripcion as g_descripcion FROM libros as lib
+                        INNER JOIN autores as a ON lib.codigo_autor = a.codigo_autor
+                        INNER JOIN editoriales as e ON lib.codigo_editorial = e.codigo_editorial
+                        INNER JOIN generos as g ON lib.id_genero = g.id_genero
+                        order by lib.codigo_libro ASC
                         ";
     
             return $this->getQuery($query);
         }else{
-            $query = "SELECT * FROM libros 
-                        INNER JOIN autores ON libros.codigo_autor = autores.codigo_autor
-                        INNER JOIN editoriales ON libros.codigo_editorial = editoriales.codigo_editorial
-                        INNER JOIN generos ON libros.id_genero = generos.id_genero
-                        WHERE codigo_libro = :codigo";
+            $query = "SELECT *, lib.descripcion as lib_descripcion, g.descripcion as g_descripcion FROM libros as lib
+                        INNER JOIN autores as a ON lib.codigo_autor = a.codigo_autor
+                        INNER JOIN editoriales as e ON lib.codigo_editorial = e.codigo_editorial
+                        INNER JOIN generos as g ON lib.id_genero = g.id_genero
+                        WHERE codigo_libro = :codigo
+                        order by lib.codigo_libro ASC";
     
             return $this->getQuery($query, [':codigo'=>$id]);
 

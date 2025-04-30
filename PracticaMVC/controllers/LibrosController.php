@@ -24,6 +24,9 @@ class LibrosController extends Controller {
     }
 
     public function create(){
+        if(empty($_SESSION['user'])){
+            header('location:'.PATH.'/Usuarios/login');
+        }
         $viewBag = [];
 
         $viewBag['autores'] = (new AutoresModel())->get('');
@@ -33,6 +36,9 @@ class LibrosController extends Controller {
     }
 
     public function insert() {
+        if(empty($_SESSION['user'])){
+            header('location:'.PATH.'/Usuarios/login');
+        }
 
         $viewBag = array();
 
@@ -74,6 +80,9 @@ class LibrosController extends Controller {
     }
 
     public function update(){
+        if(empty($_SESSION['user'])){
+            header('location:'.PATH.'/Usuarios/login');
+        }
         $viewBag = array();
 
         if(isset($_POST)){
@@ -112,6 +121,9 @@ class LibrosController extends Controller {
     }
 
     public function edit($params){
+        if(empty($_SESSION['user'])){
+            header('location:'.PATH.'/Usuarios/login');
+        }
         $viewBag = array();
         $codigo=$params[0];
         $viewBag['libro'] = $this->model->get($codigo)[0];
@@ -122,6 +134,9 @@ class LibrosController extends Controller {
     }
 
     public function delete($params){
+        if(empty($_SESSION['user'])){
+            header('location:'.PATH.'/Usuarios/login');
+        }
         $codigo=$params[0];
         $this->model->delete($codigo);
         header('Location:'.PATH.'/Libros');

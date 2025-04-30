@@ -5,8 +5,10 @@ require_once 'controllers/EditorialesController.php';
 require_once 'controllers/AutoresController.php';
 require_once 'controllers/GenerosController.php';
 require_once 'controllers/LibrosController.php';
+require_once 'controllers/UsuariosController.php';
 const PATH = '/LIS/LIS-Practicas/PracticaMVC';   
 
+session_start(); // iniciando variables de sesion
 
 $url = $_SERVER['REQUEST_URI'];
 $slices=explode('/', $url);

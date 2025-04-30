@@ -52,7 +52,7 @@
             Usuario
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="usuarioDropdown">
-            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+            <li><a class="dropdown-item" href="<?= PATH .'/Usuarios/logout'?>">Cerrar sesión (<?= $_SESSION['user'].$_SESSION['id_tipo_usuario'] ?>)</a></li>
           </ul>
         </li>
       </ul>

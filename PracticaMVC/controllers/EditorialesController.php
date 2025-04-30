@@ -9,10 +9,17 @@ class EditorialesController extends Controller{
     private $model;
 
     function __construct(){
+        if(empty($_SESSION['user'])){
+            header('location:'.PATH.'/Usuarios/login');
+        }
         $this->model = new EditorialModel();
     }
 
     public function index(){
+
+        if(empty($_SESSION['user'])){
+            header('location:'.PATH.'/Usuarios/login');
+        }
         $viewBag=[];
 
         $viewBag['editoriales'] = $this->model->get('');

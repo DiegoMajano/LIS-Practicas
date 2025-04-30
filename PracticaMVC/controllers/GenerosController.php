@@ -21,10 +21,16 @@ class GenerosController extends Controller {
     }
 
     public function create(){
+        if(empty($_SESSION['user'])){
+            header('location:'.PATH.'/Usuarios/login');
+        }
         $this->render('new.php');
     }
 
     public function insert() {
+        if(empty($_SESSION['user'])){
+            header('location:'.PATH.'/Usuarios/login');
+        }
 
         $viewBag = array();
 
@@ -63,6 +69,9 @@ class GenerosController extends Controller {
     }
     public function update() {
 
+        if(empty($_SESSION['user'])){
+            header('location:'.PATH.'/Usuarios/login');
+        }
         $viewBag = array();
 
         if(isset($_POST)){
@@ -100,6 +109,9 @@ class GenerosController extends Controller {
     }
 
     public function edit($params){
+        if(empty($_SESSION['user'])){
+            header('location:'.PATH.'/Usuarios/login');
+        }
         $viewBag = array();
         $codigo=$params[0];
         $viewBag['genero'] = $this->model->get($codigo)[0];
@@ -107,6 +119,9 @@ class GenerosController extends Controller {
     }
 
     public function delete($params){
+        if(empty($_SESSION['user'])){
+            header('location:'.PATH.'/Usuarios/login');
+        }
         $codigo=$params[0];
         $this->model->delete($codigo);
         header('Location:'.PATH.'/Generos');

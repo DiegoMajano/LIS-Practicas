@@ -14,8 +14,8 @@
             Autores
           </a>
           <ul class="dropdown-menu" aria-labelledby="autoresDropdown">
-            <li><a class="dropdown-item" href="{{route('autores.create')}}">Registrar autor</a></li>
-            <li><a class="dropdown-item" href="{{route('autores.index')}}">Ver lista de autores</a></li>
+            <li><a class="dropdown-item" href="{{ route('autores.create') }} ">Registrar autor</a></li>
+            <li><a class="dropdown-item" href="{{ route('autores.index') }} ">Ver lista de autores</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -23,8 +23,8 @@
             Géneros
           </a>
           <ul class="dropdown-menu" aria-labelledby="generosDropdown">
-            <li><a class="dropdown-item" href="#">Registrar género</a></li>
-            <li><a class="dropdown-item" href="#">Ver lista de géneros</a></li>
+            <li><a class="dropdown-item" href="{{ route('generos.create') }}">Registrar género</a></li>
+            <li><a class="dropdown-item" href="{{ route('generos.index') }}">Ver lista de géneros</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -32,8 +32,8 @@
             Editoriales
           </a>
           <ul class="dropdown-menu" aria-labelledby="editorialesDropdown">
-            <li><a class="dropdown-item" href="#">Registrar editorial</a></li>
-            <li><a class="dropdown-item" href="#">Ver lista de editoriales</a></li>
+            <li><a class="dropdown-item" href="{{ route('editoriales.create')}} ">Registrar editorial</a></li>
+            <li><a class="dropdown-item" href="{{ route('editoriales.index')}} ">Ver lista de editoriales</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -41,8 +41,8 @@
             Libros
           </a>
           <ul class="dropdown-menu" aria-labelledby="librosDropdown">
-            <li><a class="dropdown-item" href="#">Registrar libro</a></li>
-            <li><a class="dropdown-item" href="#">Ver lista de libros</a></li>
+            <li><a class="dropdown-item" href="{{ route('libros.create') }}">Registrar libro</a></li>
+            <li><a class="dropdown-item" href="{{ route('libros.index') }}">Ver lista de libros</a></li>
           </ul>
         </li>
       </ul>

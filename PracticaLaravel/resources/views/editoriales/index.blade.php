@@ -1,35 +1,35 @@
 @extends('layout.template')
 
-@section('title', 'Lista de autores')
+@section('title', 'Lista de Editoriales')
 
 @section('content')
 <div class="row">
     <div class="col-md-12">
         
-        <a class="btn btn-primary" href="{{ route('autores.create') }}">Nuevo Autor</a>
+        <a class="btn btn-primary" href="{{ route('editoriales.create') }}">Nuevo Editorial</a>
         <br><br>
         <table class="table table-striped table-bordered" id="tabla">
             <thead class="table-dark">
                 <tr class="text-center">
-                    <th>Código del Autor</th>
-                    <th>Nombre del Autor</th>
-                    <th>Nacionalidad</th>
+                    <th>Código del Editorial</th>
+                    <th>Nombre del Editorial</th>
+                    <th>Contacto</th>
+                    <th>Teléfono</th>
                     <th>Operaciones</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($autores as $autor)
+                @foreach($editoriales as $editorial)
                     <tr>
-                        <td>{{ $autor->codigo_autor }}</td>
-                        <td>{{ $autor->nombre_autor }}</td>
-                        <td>{{ $autor->nacionalidad }}</td>
+                        <td>{{ $editorial->codigo_editorial }}</td>
+                        <td>{{ $editorial->nombre_editorial }}</td>
+                        <td>{{ $editorial->contacto }}</td>
+                        <td>{{ $editorial->telefono }}</td>
                         <td class="align-middle">
                             <div class="d-flex justify-content-center gap-1 align-items-center">
-                                {{-- Editar --}}
-                                <a href="{{ route('autores.edit', $autor->codigo_autor) }}" class="btn btn-warning">Editar</a>
+                                <a href="{{ route('editoriales.edit', $editorial->codigo_editorial) }}" class="btn btn-warning">Editar</a>
 
-                                {{-- Eliminar --}}
-                                <form action="{{ route('autores.destroy', $autor->codigo_autor) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este autor?');">
+                                <form action="{{ route('editoriales.destroy', $editorial->codigo_editorial) }}" method="POST" onsubmit="return confirm('¿Estás seguro de eliminar esta editorial?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Eliminar</button>

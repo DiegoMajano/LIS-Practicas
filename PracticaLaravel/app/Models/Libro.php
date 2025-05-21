@@ -41,6 +41,7 @@ class Libro extends Model
 	];
 
 	protected $fillable = [
+		'codigo_libro',
 		'nombre_libro',
 		'existencias',
 		'precio',

@@ -29,6 +29,7 @@ class Editorial extends Model
 	public $timestamps = false;
 
 	protected $fillable = [
+		'codigo_editorial',
 		'nombre_editorial',
 		'contacto',
 		'telefono'

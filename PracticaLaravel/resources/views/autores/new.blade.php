@@ -5,9 +5,6 @@
 @section('content')
 <div class="container mt-4">
     <div class="row">
-        <h3>{{ isset($autor) ? 'Editar Autor' : 'Nuevo Autor' }}</h3>
-    </div>
-    <div class="row">
         <div class="col-md-7">
             <form action="{{ isset($autor) ? route('autores.update', $autor->codigo_autor) : route('autores.store') }}" method="POST">
                 @csrf

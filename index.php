@@ -59,6 +59,11 @@
                         Práctica MVC: Programación en PHP implementando arquitectura MVC con conexión a base de datos
                     </a>
                 </li>
+                <li>
+                    <a href="PracticaLaravel/autores" class="block bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg p-4 text-blue-950">
+                        Desafio 3: Implementando CRUD inventario_libros en laravel
+                    </a>
+                </li>
             </ul>
         </section>
     </main>
